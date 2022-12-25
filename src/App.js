@@ -1,9 +1,13 @@
 import React from 'react';
 
 class App extends React.Component {
+  constructor(props){
+    super(props);
+    console.log("hello constructor.");
+  };
   state = {
     count: 0
-  }
+  };
   add = () => {
     this.setState(current => ({count: current.count + 1}));
   };
@@ -11,8 +15,8 @@ class App extends React.Component {
   minus = () => {
     this.setState(current => ({count: current.count - 1}));
   };
-
   render() {
+    console.log("hello render.");
     return (
       <div>
         <h1>The number is {this.state.count}</h1>
@@ -20,6 +24,15 @@ class App extends React.Component {
         <button onClick = {this.minus}>Minus</button>
       </div>
   )};
+  componentDidMount(){
+    console.log("hello componentDidMount.");
+  };
+  componentDidUpdate(){
+    console.log("just componentDidUpdate.");
+  };
+  componentWillUnmount(){
+    console.log("goodbye componentWillUnmount.");
+  };
 };
 
 export default App;
